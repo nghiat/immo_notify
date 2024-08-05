@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "immo_notify",
+  "version": "1.0",
+  "description": "",
+  "permissions": [
+    "activeTab",
+    "notifications",
+    "storage",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["https://*.kleinanzeigen.de/*", "https://*.immobilienscout24.de/*", "https://*.wg-gesucht.de/*"],
+    "js": ["content.js"]
+  }],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
